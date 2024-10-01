@@ -1,5 +1,5 @@
 {
-    "name": "channelengine/merchant-api-client-php",
+    "name": "servexs/channelengine-merchant-client",
     "version": "3.0.0",
     "description": "ChannelEngine API for merchants",
     "keywords": [
