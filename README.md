@@ -82,6 +82,7 @@ Class | Method | HTTP request | Description
 *CancellationsApi* | [**cancellationGetForMerchant**](docs/Api/CancellationsApi.md#cancellationgetformerchant) | **GET** /v2/cancellations/merchant | Gets cancelations
 *ChannelsApi* | [**channelPluginsGet**](docs/Api/ChannelsApi.md#channelpluginsget) | **GET** /v2/channels | Gets channels
 *CompetitionPricesApi* | [**competitionPricesGetBuyBoxPrices**](docs/Api/CompetitionPricesApi.md#competitionpricesgetbuyboxprices) | **GET** /v2/competitionprices/buyboxprices | Gets the price from the buy box winner
+*CustomFieldsApi* | [**customFieldsDeleteCustomFields**](docs/Api/CustomFieldsApi.md#customfieldsdeletecustomfields) | **DELETE** /v2/custom-fields | Delete custom fields by a given list of custom field ids (product extra data ids)
 *CustomFieldsApi* | [**customFieldsGetCustomFields**](docs/Api/CustomFieldsApi.md#customfieldsgetcustomfields) | **GET** /v2/custom-fields | Gets custom fields
 *FulfillmentStockApi* | [**fulfillmentStockGetFulfillementStockWithStockLocations**](docs/Api/FulfillmentStockApi.md#fulfillmentstockgetfulfillementstockwithstocklocations) | **GET** /v2/fulfillmentstock | Gets product stock across all warehouses with stock locations
 *ListedProductsApi* | [**listedProductGetByFilter**](docs/Api/ListedProductsApi.md#listedproductgetbyfilter) | **GET** /v2/channels/{channelId}/products | Gets products listed by channel
@@ -89,6 +90,9 @@ Class | Method | HTTP request | Description
 *OffersApi* | [**offerGetStock**](docs/Api/OffersApi.md#offergetstock) | **GET** /v2/offer/stock | Gets product stock across all warehouses
 *OffersApi* | [**offerStockPriceUpdate**](docs/Api/OffersApi.md#offerstockpriceupdate) | **PUT** /v2/offer | Updates stock and price
 *OffersApi* | [**offerStockUpdate**](docs/Api/OffersApi.md#offerstockupdate) | **PUT** /v2/offer/stock | Updates stock
+*OrderDocumentsApi* | [**orderDocumentsAcknowledgeDocument**](docs/Api/OrderDocumentsApi.md#orderdocumentsacknowledgedocument) | **POST** /v2/orders/documents/acknowledge | Acknowledge a document.
+*OrderDocumentsApi* | [**orderDocumentsGetDocumentFileForOrder**](docs/Api/OrderDocumentsApi.md#orderdocumentsgetdocumentfilefororder) | **GET** /v2/orders/documents/file | Get document file for order.
+*OrderDocumentsApi* | [**orderDocumentsGetDocumentsByFilter**](docs/Api/OrderDocumentsApi.md#orderdocumentsgetdocumentsbyfilter) | **GET** /v2/orders/documents | Get documents by filters
 *OrdersApi* | [**orderAcknowledge**](docs/Api/OrdersApi.md#orderacknowledge) | **POST** /v2/orders/acknowledge | Acknowledges orders
 *OrdersApi* | [**orderGetByFilter**](docs/Api/OrdersApi.md#ordergetbyfilter) | **GET** /v2/orders | Gets orders by filter
 *OrdersApi* | [**orderGetNew**](docs/Api/OrdersApi.md#ordergetnew) | **GET** /v2/orders/new | Gets new orders
@@ -176,6 +180,7 @@ Class | Method | HTTP request | Description
 - [CollectionOfChannelGlobalChannelResponse](docs/Model/CollectionOfChannelGlobalChannelResponse.md)
 - [CollectionOfChannelListedProductResponse](docs/Model/CollectionOfChannelListedProductResponse.md)
 - [CollectionOfCustomFieldResponse](docs/Model/CollectionOfCustomFieldResponse.md)
+- [CollectionOfIDocumentByFilter](docs/Model/CollectionOfIDocumentByFilter.md)
 - [CollectionOfIPurchaseOrderByFilter](docs/Model/CollectionOfIPurchaseOrderByFilter.md)
 - [CollectionOfIPurchaseOrderShipmentByFilter](docs/Model/CollectionOfIPurchaseOrderShipmentByFilter.md)
 - [CollectionOfMerchantCancellationResponse](docs/Model/CollectionOfMerchantCancellationResponse.md)
@@ -207,11 +212,13 @@ Class | Method | HTTP request | Description
 - [DeleteTargetResponseVm](docs/Model/DeleteTargetResponseVm.md)
 - [DeleteTargetView](docs/Model/DeleteTargetView.md)
 - [DeleteTargetsResponse](docs/Model/DeleteTargetsResponse.md)
+- [DocumentIdentifierType](docs/Model/DocumentIdentifierType.md)
 - [ExtraDataType](docs/Model/ExtraDataType.md)
 - [FreezeProductRequest](docs/Model/FreezeProductRequest.md)
 - [FreezingActionRequest](docs/Model/FreezingActionRequest.md)
 - [FulfillmentType](docs/Model/FulfillmentType.md)
 - [Gender](docs/Model/Gender.md)
+- [IDocumentByFilter](docs/Model/IDocumentByFilter.md)
 - [IImportInformation](docs/Model/IImportInformation.md)
 - [IPurchaseOrderByFilter](docs/Model/IPurchaseOrderByFilter.md)
 - [IPurchaseOrderLineByFilter](docs/Model/IPurchaseOrderLineByFilter.md)
@@ -227,11 +234,13 @@ Class | Method | HTTP request | Description
 - [ListedProductChannelStatus](docs/Model/ListedProductChannelStatus.md)
 - [ListedProductExportStatus](docs/Model/ListedProductExportStatus.md)
 - [MancoReason](docs/Model/MancoReason.md)
+- [MerchantAcknowledgeDocumentRequest](docs/Model/MerchantAcknowledgeDocumentRequest.md)
 - [MerchantAcknowledgePurchaseOrder](docs/Model/MerchantAcknowledgePurchaseOrder.md)
 - [MerchantAcknowledgePurchaseOrderLine](docs/Model/MerchantAcknowledgePurchaseOrderLine.md)
 - [MerchantAcknowledgeRefund](docs/Model/MerchantAcknowledgeRefund.md)
 - [MerchantAcknowledgeReturn](docs/Model/MerchantAcknowledgeReturn.md)
 - [MerchantAddressResponse](docs/Model/MerchantAddressResponse.md)
+- [MerchantBundleOrderLineResponse](docs/Model/MerchantBundleOrderLineResponse.md)
 - [MerchantCancellationLineRequest](docs/Model/MerchantCancellationLineRequest.md)
 - [MerchantCancellationLineResponse](docs/Model/MerchantCancellationLineResponse.md)
 - [MerchantCancellationRequest](docs/Model/MerchantCancellationRequest.md)
@@ -312,6 +321,9 @@ Class | Method | HTTP request | Description
 - [ModulesTaxType](docs/Model/ModulesTaxType.md)
 - [NotificationType](docs/Model/NotificationType.md)
 - [Operation](docs/Model/Operation.md)
+- [OrderDocumentMediaType](docs/Model/OrderDocumentMediaType.md)
+- [OrderDocumentSource](docs/Model/OrderDocumentSource.md)
+- [OrderDocumentType](docs/Model/OrderDocumentType.md)
 - [OrderIdentifier](docs/Model/OrderIdentifier.md)
 - [OrderLineIdentifier](docs/Model/OrderLineIdentifier.md)
 - [OrderStatusView](docs/Model/OrderStatusView.md)
@@ -405,7 +417,7 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.17.0`
+- API version: `2.18.0`
     - Package version: `3.0.0`
     - Generator version: `7.8.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

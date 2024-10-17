@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **originalLineVat** | **float** | The total amount of VAT charged over the total value of the order line (quantity * unit price)  (in the currency in which the order was paid for, see CurrencyCode). | [optional]
 **originalFeeFixed** | **float** | A percentage fee that is charged by the Channel for this orderline.  This fee rate is based on the currency of client  This field is optional, send 0 if not applicable. | [optional]
 **bundleProductMerchantProductNo** | **string** | If the product is ordered part of a bundle, this field contains the MerchantProductNo of  the product bundle. | [optional]
+**bundleOrderLineId** | **int** | If the product is ordered part of a bundle | [optional]
 **jurisCode** | **string** | State assigned code identifying the jurisdiction. | [optional]
 **jurisName** | **string** | Name of a tax jurisdiction. | [optional]
 **vatRate** | **float** | VAT rate of the orderline. | [optional]

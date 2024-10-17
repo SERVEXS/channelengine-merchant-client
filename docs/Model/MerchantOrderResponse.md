@@ -47,6 +47,7 @@ Name | Type | Description | Notes
 **originalTotalFee** | **float** | The total fee: the fees on the order lines + the fee on the order itself  (in the currency in which the order was paid for, see CurrencyCode). | [optional]
 **totalFee** | **float** | The total fee: the fees on the order lines + the fee on the order itself  (in the shop&#39;s base currency calculated using the exchange rate at the time of ordering). | [optional]
 **lines** | [**\ChannelEngine\Merchant\ApiClient\Model\MerchantOrderLineResponse[]**](MerchantOrderLineResponse.md) |  | [optional]
+**bundleOrderLines** | [**\ChannelEngine\Merchant\ApiClient\Model\MerchantBundleOrderLineResponse[]**](MerchantBundleOrderLineResponse.md) | Show only when order contain bundle products | [optional]
 **phone** | **string** | The customer&#39;s telephone number. | [optional]
 **email** | **string** | The customer&#39;s email. |
 **languageCode** | **string** | The language of the order. Has to be a 2-letter ISO language code. | [optional]
