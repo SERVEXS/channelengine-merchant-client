@@ -106,7 +106,7 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\OffersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$merchantStockPriceUpdateRequest = array(new \ChannelEngine\Merchant\ApiClient\Model\MerchantStockPriceUpdateRequest()); // \ChannelEngine\Merchant\ApiClient\Model\MerchantStockPriceUpdateRequest[] | References to the products that should be updated, and the new values<br />for the stock or price fields. It is possible to supply only one of the two fields<br />or both.
+$merchantStockPriceUpdateRequest = array(new \ChannelEngine\Merchant\ApiClient\Model\MerchantStockPriceUpdateRequest()); // \ChannelEngine\Merchant\ApiClient\Model\MerchantStockPriceUpdateRequest[] | References to the products that should be updated, and the new values <br />for the stock or price fields. It is possible to supply only one of the two fields <br />or both.
 
 try {
     $result = $apiInstance->offerStockPriceUpdate($merchantStockPriceUpdateRequest);
@@ -120,7 +120,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **merchantStockPriceUpdateRequest** | [**\ChannelEngine\Merchant\ApiClient\Model\MerchantStockPriceUpdateRequest[]**](../Model/MerchantStockPriceUpdateRequest.md)| References to the products that should be updated, and the new values&lt;br /&gt;for the stock or price fields. It is possible to supply only one of the two fields&lt;br /&gt;or both. | |
+| **merchantStockPriceUpdateRequest** | [**\ChannelEngine\Merchant\ApiClient\Model\MerchantStockPriceUpdateRequest[]**](../Model/MerchantStockPriceUpdateRequest.md)| References to the products that should be updated, and the new values &lt;br /&gt;for the stock or price fields. It is possible to supply only one of the two fields &lt;br /&gt;or both. | |
 
 ### Return type
 

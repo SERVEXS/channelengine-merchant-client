@@ -18,7 +18,7 @@ refundAcknowledge($singleMerchantAcknowledgeRefundRequest): \ChannelEngine\Merch
 
 [CLOSED BETA] Acknowledge a refund
 
-Acknowledges a refund<br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
+Acknowledges a refund <br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
 
 ### Example
 
@@ -80,7 +80,7 @@ refundCreate($singleMerchantCreateRefundRequest): \ChannelEngine\Merchant\ApiCli
 
 [CLOSED BETA] Create a refund
 
-Creates a new refund<br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
+Creates a new refund <br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
 
 ### Example
 
@@ -142,7 +142,7 @@ refundGet($identifier, $type): \ChannelEngine\Merchant\ApiClient\Model\SingleOfI
 
 [CLOSED BETA] Get refund by identifier
 
-Gets a single refund by the given identifier<br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
+Gets a single refund by the given identifier <br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
 
 ### Example
 
@@ -164,7 +164,7 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\RefundsApi(
     $config
 );
 $identifier = 'identifier_example'; // string | The identifier to search for
-$type = new \ChannelEngine\Merchant\ApiClient\Model\RefundIdentifier(); // RefundIdentifier | Specify whether to search by ID, Merchant Refund No or Channel Refund No
+$type = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\RefundIdentifier(); // \ChannelEngine\Merchant\ApiClient\Model\RefundIdentifier | Specify whether to search by ID, Merchant Refund No or Channel Refund No
 
 try {
     $result = $apiInstance->refundGet($identifier, $type);
@@ -179,7 +179,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **identifier** | **string**| The identifier to search for | |
-| **type** | [**RefundIdentifier**](../Model/.md)| Specify whether to search by ID, Merchant Refund No or Channel Refund No | [optional] |
+| **type** | [**\ChannelEngine\Merchant\ApiClient\Model\RefundIdentifier**](../Model/.md)| Specify whether to search by ID, Merchant Refund No or Channel Refund No | [optional] |
 
 ### Return type
 
@@ -201,12 +201,12 @@ try {
 ## `refundGetByFilter()`
 
 ```php
-refundGetByFilter($identifiersIdentifierType, $identifiersModels, $channelExportStatusStatuses, $channelExportStatusMaxNumberOfExportAttempts, $reasons, $createdDateRangeFromDate, $createdDateRangeToDate, $channelIds, $search, $isAcknowledgedByMerchant, $isAcknowledgedByChannel, $fulfillmentType, $creatorType, $externalBatchNos, $pageIndex, $pageSize): \ChannelEngine\Merchant\ApiClient\Model\SingleOfIRefund
+refundGetByFilter($identifiersIdentifierType, $identifiersModels, $channelExportStatusStatuses, $channelExportStatusMaxNumberOfExportAttempts, $reasons, $createdDateRangeFromDate, $createdDateRangeToDate, $channelIds, $search, $isAcknowledgedByMerchant, $isAcknowledgedByChannel, $fulfillmentType, $creatorType, $externalBatchNos, $page): \ChannelEngine\Merchant\ApiClient\Model\SingleOfIRefund
 ```
 
 [CLOSED BETA] Get refunds by filter
 
-Gets multiple refunds by the given filter<br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
+Gets multiple refunds by the given filter <br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
 
 ### Example
 
@@ -227,25 +227,24 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\RefundsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$identifiersIdentifierType = new \ChannelEngine\Merchant\ApiClient\Model\RefundByFilterIdentifier(); // RefundByFilterIdentifier | The type of identifier: which identifier to filter on
+$identifiersIdentifierType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\RefundByFilterIdentifier(); // \ChannelEngine\Merchant\ApiClient\Model\RefundByFilterIdentifier | The type of identifier: which identifier to filter on
 $identifiersModels = array('identifiersModels_example'); // string[] | The value (of the selected type) to filter on
-$channelExportStatusStatuses = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus()); // \ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus[]
+$channelExportStatusStatuses = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ModuleChannelExportStatus()); // \ChannelEngine\Merchant\ApiClient\Model\ModuleChannelExportStatus[]
 $channelExportStatusMaxNumberOfExportAttempts = 56; // int
 $reasons = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\RefundReason()); // \ChannelEngine\Merchant\ApiClient\Model\RefundReason[]
-$createdDateRangeFromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$createdDateRangeToDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$createdDateRangeFromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$createdDateRangeToDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
 $channelIds = array(56); // int[]
 $search = 'search_example'; // string
 $isAcknowledgedByMerchant = True; // bool
 $isAcknowledgedByChannel = True; // bool
-$fulfillmentType = new \ChannelEngine\Merchant\ApiClient\Model\ModuleFulfillmentType(); // ModuleFulfillmentType
-$creatorType = new \ChannelEngine\Merchant\ApiClient\Model\CreatorType(); // CreatorType
+$fulfillmentType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ModuleFulfillmentType(); // \ChannelEngine\Merchant\ApiClient\Model\ModuleFulfillmentType
+$creatorType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\CreatorType(); // \ChannelEngine\Merchant\ApiClient\Model\CreatorType
 $externalBatchNos = array('externalBatchNos_example'); // string[]
-$pageIndex = 56; // int
-$pageSize = 56; // int
+$page = 56; // int | Page number
 
 try {
-    $result = $apiInstance->refundGetByFilter($identifiersIdentifierType, $identifiersModels, $channelExportStatusStatuses, $channelExportStatusMaxNumberOfExportAttempts, $reasons, $createdDateRangeFromDate, $createdDateRangeToDate, $channelIds, $search, $isAcknowledgedByMerchant, $isAcknowledgedByChannel, $fulfillmentType, $creatorType, $externalBatchNos, $pageIndex, $pageSize);
+    $result = $apiInstance->refundGetByFilter($identifiersIdentifierType, $identifiersModels, $channelExportStatusStatuses, $channelExportStatusMaxNumberOfExportAttempts, $reasons, $createdDateRangeFromDate, $createdDateRangeToDate, $channelIds, $search, $isAcknowledgedByMerchant, $isAcknowledgedByChannel, $fulfillmentType, $creatorType, $externalBatchNos, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling RefundsApi->refundGetByFilter: ', $e->getMessage(), PHP_EOL;
@@ -256,9 +255,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **identifiersIdentifierType** | [**RefundByFilterIdentifier**](../Model/.md)| The type of identifier: which identifier to filter on | [optional] |
+| **identifiersIdentifierType** | [**\ChannelEngine\Merchant\ApiClient\Model\RefundByFilterIdentifier**](../Model/.md)| The type of identifier: which identifier to filter on | [optional] |
 | **identifiersModels** | [**string[]**](../Model/string.md)| The value (of the selected type) to filter on | [optional] |
-| **channelExportStatusStatuses** | [**\ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus[]**](../Model/\ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus.md)|  | [optional] |
+| **channelExportStatusStatuses** | [**\ChannelEngine\Merchant\ApiClient\Model\ModuleChannelExportStatus[]**](../Model/\ChannelEngine\Merchant\ApiClient\Model\ModuleChannelExportStatus.md)|  | [optional] |
 | **channelExportStatusMaxNumberOfExportAttempts** | **int**|  | [optional] |
 | **reasons** | [**\ChannelEngine\Merchant\ApiClient\Model\RefundReason[]**](../Model/\ChannelEngine\Merchant\ApiClient\Model\RefundReason.md)|  | [optional] |
 | **createdDateRangeFromDate** | **\DateTime**|  | [optional] |
@@ -267,11 +266,10 @@ try {
 | **search** | **string**|  | [optional] |
 | **isAcknowledgedByMerchant** | **bool**|  | [optional] |
 | **isAcknowledgedByChannel** | **bool**|  | [optional] |
-| **fulfillmentType** | [**ModuleFulfillmentType**](../Model/.md)|  | [optional] |
-| **creatorType** | [**CreatorType**](../Model/.md)|  | [optional] |
+| **fulfillmentType** | [**\ChannelEngine\Merchant\ApiClient\Model\ModuleFulfillmentType**](../Model/.md)|  | [optional] |
+| **creatorType** | [**\ChannelEngine\Merchant\ApiClient\Model\CreatorType**](../Model/.md)|  | [optional] |
 | **externalBatchNos** | [**string[]**](../Model/string.md)|  | [optional] |
-| **pageIndex** | **int**|  | [optional] |
-| **pageSize** | **int**|  | [optional] |
+| **page** | **int**| Page number | [optional] |
 
 ### Return type
 

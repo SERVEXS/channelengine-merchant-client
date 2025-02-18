@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **merchantOrderNo** | **string** | The unique order reference used by the Merchant | [optional]
 **status** | [**\ChannelEngine\Merchant\ApiClient\Model\OrderStatusView**](OrderStatusView.md) |  | [optional]
 **isBusinessOrder** | **bool** | Indicating whether the order is a business order. | [optional]
+**isTest** | **bool** | Indicating whether the order is a test order. | [optional]
 **acknowledgedDate** | **\DateTime** | The date the order was acknowledged in ChannelEngine. | [optional]
 **createdAt** | **\DateTime** | The date the order was created in ChannelEngine. | [optional]
 **updatedAt** | **\DateTime** | The date the order was last updated in ChannelEngine. | [optional]

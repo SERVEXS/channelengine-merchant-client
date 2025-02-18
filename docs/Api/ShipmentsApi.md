@@ -20,7 +20,7 @@ shipmentCreate($merchantShipmentRequest): \ChannelEngine\Merchant\ApiClient\Mode
 
 Creates shipments
 
-Marks an order as fully or partially shipped, based on the order line and quantity input.<br />Indicate the **Stock location ID** if you make use of multiple stock locations.
+Marks an order as fully or partially shipped, based on the order line and quantity input. <br />Indicate the **Stock location ID** if you make use of multiple stock locations.
 
 ### Example
 
@@ -82,7 +82,7 @@ shipmentCreateForChannelMethod($merchantChannelLabelShipmentRequest): \ChannelEn
 
 Creates a shipment and initiates shipping label generation
 
-Marks an order as either fully or partially shipped, based on the order line and quantity input.<br />It also provides the marketplace with information necessary to generate a shipping label.<br />If you make use of multiple stock locations, indicate the **Stock location ID**.<br /> <br />**NB:** to request a shipping label, include information on the package size (i.e.: dimensions and weight).
+Marks an order as either fully or partially shipped, based on the order line and quantity input. <br />It also provides the marketplace with information necessary to generate a shipping label. <br />If you make use of multiple stock locations, indicate the **Stock location ID**. <br /> <br />**NB:** to request a shipping label, include information on the package size (i.e.: dimensions and weight).
 
 ### Example
 
@@ -144,7 +144,7 @@ shipmentGetShipmentLabelCarriers($merchantOrderNo, $merchantShipmentLabelCarrier
 
 Gets carriers providing shipping labels
 
-Posts a request to get the available marketplace carrier offers.<br /><br />**NB:** this endpoint is used to buy a shipping label through the marketplace.
+Posts a request to get the available marketplace carrier offers. <br /> <br />**NB:** this endpoint is used to buy a shipping label through the marketplace.
 
 ### Example
 
@@ -203,12 +203,12 @@ try {
 ## `shipmentIndex()`
 
 ```php
-shipmentIndex($merchantShipmentNos, $merchantOrderNos, $method, $shippedFromCountryCodes, $fromShipmentDate, $toShipmentDate, $fromCreateDate, $toCreateDate, $fromUpdateDate, $toUpdateDate, $fulfillmentType, $channelShipmentNos, $channelOrderNos, $page): \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantShipmentResponse
+shipmentIndex($merchantShipmentNos, $merchantOrderNos, $method, $shippedFromCountryCodes, $fromShipmentDate, $toShipmentDate, $fromCreateDate, $toCreateDate, $fromUpdateDate, $toUpdateDate, $fulfillmentType, $channelShipmentNos, $channelOrderNos, $channelExportStatus, $channelExportAttempts, $fromDeliveredAt, $toDeliveredAt, $page): \ChannelEngine\Merchant\ApiClient\Model\CollectionOfMerchantShipmentResponse
 ```
 
 Gets shipments by filter
 
-Gets the shipments based on the available filters.<br />Shipments are listed in chronological order, from old to new.
+Gets the shipments based on the available filters. <br />Shipments are listed in chronological order, from old to new.
 
 ### Example
 
@@ -233,19 +233,23 @@ $merchantShipmentNos = array('merchantShipmentNos_example'); // string[] | Filte
 $merchantOrderNos = array('merchantOrderNos_example'); // string[] | Filter on the unique references (ids) of order as used by the merchant.
 $method = 'method_example'; // string | Filter on the shipping method.
 $shippedFromCountryCodes = array('shippedFromCountryCodes_example'); // string[] | 2-digit Country code
-$fromShipmentDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the shipment date, starting from this date. This date is inclusive.
-$toShipmentDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the shipment date, until this date. This date is exclusive.
-$fromCreateDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the create date of the shipment in ChannelEngine, starting from this date. This date is inclusive.
-$toCreateDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the create date of the shipment in ChannelEngine, until this date. This date is exclusive.
-$fromUpdateDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the update date of the shipment in ChannelEngine, starting from this date. This date is inclusive.
-$toUpdateDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the update date of the shipment in ChannelEngine, until this date. This date is exclusive.
-$fulfillmentType = new \ChannelEngine\Merchant\ApiClient\Model\ShipmentFulfillmentType(); // ShipmentFulfillmentType | Filter on the fulfillment type of the shipment.
+$fromShipmentDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the shipment date, starting from this date. This date is inclusive.
+$toShipmentDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the shipment date, until this date. This date is exclusive.
+$fromCreateDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the create date of the shipment in ChannelEngine, starting from this date. This date is inclusive.
+$toCreateDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the create date of the shipment in ChannelEngine, until this date. This date is exclusive.
+$fromUpdateDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the update date of the shipment in ChannelEngine, starting from this date. This date is inclusive.
+$toUpdateDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the update date of the shipment in ChannelEngine, until this date. This date is exclusive.
+$fulfillmentType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ShipmentFulfillmentType(); // \ChannelEngine\Merchant\ApiClient\Model\ShipmentFulfillmentType | Filter on the fulfillment type of the shipment.
 $channelShipmentNos = array('channelShipmentNos_example'); // string[] | Filter on the unique references (ids) as used by the channel.
 $channelOrderNos = array('channelOrderNos_example'); // string[] | Filter on the unique references (ids) of order as used by the channel.
+$channelExportStatus = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus(); // \ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus | Filter on the current status of the shipment.
+$channelExportAttempts = 56; // int | Filter on the amount of times the shipment has been attempted to be exported.
+$fromDeliveredAt = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the delivery date of the shipment in ChannelEngine, starting from this date. This date is inclusive.
+$toDeliveredAt = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the delivery date of the shipment in ChannelEngine, until this date. This date is exclusive.
 $page = 56; // int | The page to filter on. Starts at 1.
 
 try {
-    $result = $apiInstance->shipmentIndex($merchantShipmentNos, $merchantOrderNos, $method, $shippedFromCountryCodes, $fromShipmentDate, $toShipmentDate, $fromCreateDate, $toCreateDate, $fromUpdateDate, $toUpdateDate, $fulfillmentType, $channelShipmentNos, $channelOrderNos, $page);
+    $result = $apiInstance->shipmentIndex($merchantShipmentNos, $merchantOrderNos, $method, $shippedFromCountryCodes, $fromShipmentDate, $toShipmentDate, $fromCreateDate, $toCreateDate, $fromUpdateDate, $toUpdateDate, $fulfillmentType, $channelShipmentNos, $channelOrderNos, $channelExportStatus, $channelExportAttempts, $fromDeliveredAt, $toDeliveredAt, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ShipmentsApi->shipmentIndex: ', $e->getMessage(), PHP_EOL;
@@ -266,9 +270,13 @@ try {
 | **toCreateDate** | **\DateTime**| Filter on the create date of the shipment in ChannelEngine, until this date. This date is exclusive. | [optional] |
 | **fromUpdateDate** | **\DateTime**| Filter on the update date of the shipment in ChannelEngine, starting from this date. This date is inclusive. | [optional] |
 | **toUpdateDate** | **\DateTime**| Filter on the update date of the shipment in ChannelEngine, until this date. This date is exclusive. | [optional] |
-| **fulfillmentType** | [**ShipmentFulfillmentType**](../Model/.md)| Filter on the fulfillment type of the shipment. | [optional] |
+| **fulfillmentType** | [**\ChannelEngine\Merchant\ApiClient\Model\ShipmentFulfillmentType**](../Model/.md)| Filter on the fulfillment type of the shipment. | [optional] |
 | **channelShipmentNos** | [**string[]**](../Model/string.md)| Filter on the unique references (ids) as used by the channel. | [optional] |
 | **channelOrderNos** | [**string[]**](../Model/string.md)| Filter on the unique references (ids) of order as used by the channel. | [optional] |
+| **channelExportStatus** | [**\ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus**](../Model/.md)| Filter on the current status of the shipment. | [optional] |
+| **channelExportAttempts** | **int**| Filter on the amount of times the shipment has been attempted to be exported. | [optional] |
+| **fromDeliveredAt** | **\DateTime**| Filter on the delivery date of the shipment in ChannelEngine, starting from this date. This date is inclusive. | [optional] |
+| **toDeliveredAt** | **\DateTime**| Filter on the delivery date of the shipment in ChannelEngine, until this date. This date is exclusive. | [optional] |
 | **page** | **int**| The page to filter on. Starts at 1. | [optional] |
 
 ### Return type
@@ -296,7 +304,7 @@ shipmentShippingLabel($merchantShipmentNo): \SplFileObject
 
 Gets a shipping label
 
-Downloads the shipping label for the shipment.<br /> <br /> **NB:** it may take some time between the creation of the shipment and the availability of the label.<br />A \"404 not found\" error might indicate that the label is not available yet.<br />A \"410 gone\" the shipping label is not available anymore.
+Downloads the shipping label for the shipment. <br /> <br /> **NB:** it may take some time between the creation of the shipment and the availability of the label. <br />A \"404 not found\" error might indicate that the label is not available yet. <br />A \"410 gone\" the shipping label is not available anymore.
 
 ### Example
 

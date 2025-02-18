@@ -99,7 +99,7 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\CancellationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$createdSince = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the create date of the cancellation in ChannelEngine, starting from this date. This date is inclusive.
+$createdSince = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the create date of the cancellation in ChannelEngine, starting from this date. This date is inclusive.
 $page = 56; // int | The page to filter on. Starts at 1.
 
 try {

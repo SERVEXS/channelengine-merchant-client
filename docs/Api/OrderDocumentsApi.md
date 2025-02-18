@@ -17,7 +17,7 @@ orderDocumentsAcknowledgeDocument($merchantAcknowledgeDocumentRequest): \Channel
 
 Acknowledge a document.
 
-Acknowledge a single document. By acknowledging the document the merchant can confirm that<br />the document has been received. These references will be used in the other API calls.<br />After a successful request, the document is marked as Merchant Acknowledged.<br />If the document is already acknowledged, you'll receive a 404 Bad request
+Acknowledge a single document. By acknowledging the document the merchant can confirm that <br />the document has been received. These references will be used in the other API calls. <br />After a successful request, the document is marked as Merchant Acknowledged. <br />If the document is already acknowledged, you'll receive a 404 Bad request
 
 ### Example
 
@@ -138,7 +138,7 @@ try {
 ## `orderDocumentsGetDocumentsByFilter()`
 
 ```php
-orderDocumentsGetDocumentsByFilter($identifiersIdentifierType, $identifiersModels, $createdDateRangeFromDate, $createdDateRangeToDate, $channelIds, $onlyUnacknowledgedByMerchant, $type, $pageIndex, $pageSize): \ChannelEngine\Merchant\ApiClient\Model\CollectionOfIDocumentByFilter
+orderDocumentsGetDocumentsByFilter($identifiersIdentifierType, $identifiersModels, $createdDateRangeFromDate, $createdDateRangeToDate, $channelIds, $onlyUnacknowledgedByMerchant, $type, $linkedWith, $pageIndex, $pageSize): \ChannelEngine\Merchant\ApiClient\Model\CollectionOfIDocumentByFilter
 ```
 
 Get documents by filters
@@ -164,18 +164,19 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\OrderDocumentsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$identifiersIdentifierType = new \ChannelEngine\Merchant\ApiClient\Model\DocumentIdentifierType(); // DocumentIdentifierType | The type of identifier: which identifier to filter on
+$identifiersIdentifierType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\DocumentIdentifierType(); // \ChannelEngine\Merchant\ApiClient\Model\DocumentIdentifierType | The type of identifier: which identifier to filter on
 $identifiersModels = array('identifiersModels_example'); // string[] | The value (of the selected type) to filter on
-$createdDateRangeFromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$createdDateRangeToDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$createdDateRangeFromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$createdDateRangeToDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
 $channelIds = array(56); // int[]
 $onlyUnacknowledgedByMerchant = True; // bool
-$type = new \ChannelEngine\Merchant\ApiClient\Model\OrderDocumentType(); // OrderDocumentType
+$type = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\OrderDocumentType(); // \ChannelEngine\Merchant\ApiClient\Model\OrderDocumentType
+$linkedWith = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\OrderDocumentLinkedWith(); // \ChannelEngine\Merchant\ApiClient\Model\OrderDocumentLinkedWith
 $pageIndex = 56; // int
 $pageSize = 56; // int
 
 try {
-    $result = $apiInstance->orderDocumentsGetDocumentsByFilter($identifiersIdentifierType, $identifiersModels, $createdDateRangeFromDate, $createdDateRangeToDate, $channelIds, $onlyUnacknowledgedByMerchant, $type, $pageIndex, $pageSize);
+    $result = $apiInstance->orderDocumentsGetDocumentsByFilter($identifiersIdentifierType, $identifiersModels, $createdDateRangeFromDate, $createdDateRangeToDate, $channelIds, $onlyUnacknowledgedByMerchant, $type, $linkedWith, $pageIndex, $pageSize);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrderDocumentsApi->orderDocumentsGetDocumentsByFilter: ', $e->getMessage(), PHP_EOL;
@@ -186,13 +187,14 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **identifiersIdentifierType** | [**DocumentIdentifierType**](../Model/.md)| The type of identifier: which identifier to filter on | [optional] |
+| **identifiersIdentifierType** | [**\ChannelEngine\Merchant\ApiClient\Model\DocumentIdentifierType**](../Model/.md)| The type of identifier: which identifier to filter on | [optional] |
 | **identifiersModels** | [**string[]**](../Model/string.md)| The value (of the selected type) to filter on | [optional] |
 | **createdDateRangeFromDate** | **\DateTime**|  | [optional] |
 | **createdDateRangeToDate** | **\DateTime**|  | [optional] |
 | **channelIds** | [**int[]**](../Model/int.md)|  | [optional] |
 | **onlyUnacknowledgedByMerchant** | **bool**|  | [optional] |
-| **type** | [**OrderDocumentType**](../Model/.md)|  | [optional] |
+| **type** | [**\ChannelEngine\Merchant\ApiClient\Model\OrderDocumentType**](../Model/.md)|  | [optional] |
+| **linkedWith** | [**\ChannelEngine\Merchant\ApiClient\Model\OrderDocumentLinkedWith**](../Model/.md)|  | [optional] |
 | **pageIndex** | **int**|  | [optional] |
 | **pageSize** | **int**|  | [optional] |
 

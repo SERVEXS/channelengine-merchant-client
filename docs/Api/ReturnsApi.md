@@ -26,7 +26,7 @@ returnAcknowledge($singleMerchantAcknowledgeReturnRequest): \ChannelEngine\Merch
 
 [CLOSED BETA] Acknowledge a return
 
-Acknowledges a return<br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
+Acknowledges a return <br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
 
 ### Example
 
@@ -88,7 +88,7 @@ returnAcknowledge_0($merchantReturnAcknowledgeRequest): \ChannelEngine\Merchant\
 
 Acknowledges a return
 
-Acknowledges a return based on the **Return ID** provided.<br /><br />**NB:** by acknowledging a return, you signal that it was registered in your system.<br />You can later filter your returns on the **Is acknowledged** parameter.
+Acknowledges a return based on the **Return ID** provided. <br /> <br />**NB:** by acknowledging a return, you signal that it was registered in your system. <br />You can later filter your returns on the **Is acknowledged** parameter.
 
 ### Example
 
@@ -150,7 +150,7 @@ returnCreate($singleMerchantCreateReturnRequest): \ChannelEngine\Merchant\ApiCli
 
 [CLOSED BETA] Create a return
 
-Creates a new return<br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
+Creates a new return <br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
 
 ### Example
 
@@ -212,7 +212,7 @@ returnDeclareForMerchant($merchantReturnRequest): \ChannelEngine\Merchant\ApiCli
 
 Creates merchant return
 
-Marks an order as either fully or partially returned.<br /><br />**NB:** this endpoint is used for merchant returns (i.e.: returns dealt with by the merchant).
+Marks an order as either fully or partially returned. <br /> <br />**NB:** this endpoint is used for merchant returns (i.e.: returns dealt with by the merchant).
 
 ### Example
 
@@ -274,7 +274,7 @@ returnGet($identifier, $type): \ChannelEngine\Merchant\ApiClient\Model\SingleOfI
 
 [CLOSED BETA] Get return by identifier
 
-Gets a single return by the given identifier<br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
+Gets a single return by the given identifier <br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
 
 ### Example
 
@@ -296,7 +296,7 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\ReturnsApi(
     $config
 );
 $identifier = 'identifier_example'; // string | The identifier to search for
-$type = new \ChannelEngine\Merchant\ApiClient\Model\ReturnIdentifier(); // ReturnIdentifier | Specify whether to search by ID, Merchant Return No or Channel Return No
+$type = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ReturnIdentifier(); // \ChannelEngine\Merchant\ApiClient\Model\ReturnIdentifier | Specify whether to search by ID, Merchant Return No or Channel Return No
 
 try {
     $result = $apiInstance->returnGet($identifier, $type);
@@ -311,7 +311,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **identifier** | **string**| The identifier to search for | |
-| **type** | [**ReturnIdentifier**](../Model/.md)| Specify whether to search by ID, Merchant Return No or Channel Return No | [optional] |
+| **type** | [**\ChannelEngine\Merchant\ApiClient\Model\ReturnIdentifier**](../Model/.md)| Specify whether to search by ID, Merchant Return No or Channel Return No | [optional] |
 
 ### Return type
 
@@ -333,12 +333,12 @@ try {
 ## `returnGetByFilter()`
 
 ```php
-returnGetByFilter($identifiersIdentifierType, $identifiersModels, $channelExportStatusStatuses, $channelExportStatusMaxNumberOfExportAttempts, $reasons, $createdDateRangeFromDate, $createdDateRangeToDate, $statuses, $channelIds, $search, $isAcknowledgedByMerchant, $isAcknowledgedByChannel, $fulfillmentType, $creatorType, $externalBatchNos, $pageIndex, $pageSize): \ChannelEngine\Merchant\ApiClient\Model\SingleOfIReturn
+returnGetByFilter($identifiersIdentifierType, $identifiersModels, $channelExportStatusStatuses, $channelExportStatusMaxNumberOfExportAttempts, $reasons, $createdDateRangeFromDate, $createdDateRangeToDate, $statuses, $channelIds, $search, $isAcknowledgedByMerchant, $isAcknowledgedByChannel, $fulfillmentType, $creatorType, $externalBatchNos, $page): \ChannelEngine\Merchant\ApiClient\Model\SingleOfIReturn
 ```
 
 [CLOSED BETA] Get returns by filter
 
-Gets multiple returns by the given filter<br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
+Gets multiple returns by the given filter <br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
 
 ### Example
 
@@ -359,26 +359,25 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\ReturnsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$identifiersIdentifierType = new \ChannelEngine\Merchant\ApiClient\Model\ReturnByFilterIdentifier(); // ReturnByFilterIdentifier | The type of identifier: which identifier to filter on
+$identifiersIdentifierType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ReturnByFilterIdentifier(); // \ChannelEngine\Merchant\ApiClient\Model\ReturnByFilterIdentifier | The type of identifier: which identifier to filter on
 $identifiersModels = array('identifiersModels_example'); // string[] | The value (of the selected type) to filter on
-$channelExportStatusStatuses = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus()); // \ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus[]
+$channelExportStatusStatuses = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ModuleChannelExportStatus()); // \ChannelEngine\Merchant\ApiClient\Model\ModuleChannelExportStatus[]
 $channelExportStatusMaxNumberOfExportAttempts = 56; // int
 $reasons = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ModuleReturnReason()); // \ChannelEngine\Merchant\ApiClient\Model\ModuleReturnReason[]
-$createdDateRangeFromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$createdDateRangeToDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$createdDateRangeFromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$createdDateRangeToDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
 $statuses = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ModuleReturnStatus()); // \ChannelEngine\Merchant\ApiClient\Model\ModuleReturnStatus[]
 $channelIds = array(56); // int[]
 $search = 'search_example'; // string
 $isAcknowledgedByMerchant = True; // bool
 $isAcknowledgedByChannel = True; // bool
-$fulfillmentType = new \ChannelEngine\Merchant\ApiClient\Model\ModuleFulfillmentType(); // ModuleFulfillmentType
-$creatorType = new \ChannelEngine\Merchant\ApiClient\Model\CreatorType(); // CreatorType
+$fulfillmentType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ModuleFulfillmentType(); // \ChannelEngine\Merchant\ApiClient\Model\ModuleFulfillmentType
+$creatorType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\CreatorType(); // \ChannelEngine\Merchant\ApiClient\Model\CreatorType
 $externalBatchNos = array('externalBatchNos_example'); // string[]
-$pageIndex = 56; // int
-$pageSize = 56; // int
+$page = 56; // int | Page number
 
 try {
-    $result = $apiInstance->returnGetByFilter($identifiersIdentifierType, $identifiersModels, $channelExportStatusStatuses, $channelExportStatusMaxNumberOfExportAttempts, $reasons, $createdDateRangeFromDate, $createdDateRangeToDate, $statuses, $channelIds, $search, $isAcknowledgedByMerchant, $isAcknowledgedByChannel, $fulfillmentType, $creatorType, $externalBatchNos, $pageIndex, $pageSize);
+    $result = $apiInstance->returnGetByFilter($identifiersIdentifierType, $identifiersModels, $channelExportStatusStatuses, $channelExportStatusMaxNumberOfExportAttempts, $reasons, $createdDateRangeFromDate, $createdDateRangeToDate, $statuses, $channelIds, $search, $isAcknowledgedByMerchant, $isAcknowledgedByChannel, $fulfillmentType, $creatorType, $externalBatchNos, $page);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReturnsApi->returnGetByFilter: ', $e->getMessage(), PHP_EOL;
@@ -389,9 +388,9 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **identifiersIdentifierType** | [**ReturnByFilterIdentifier**](../Model/.md)| The type of identifier: which identifier to filter on | [optional] |
+| **identifiersIdentifierType** | [**\ChannelEngine\Merchant\ApiClient\Model\ReturnByFilterIdentifier**](../Model/.md)| The type of identifier: which identifier to filter on | [optional] |
 | **identifiersModels** | [**string[]**](../Model/string.md)| The value (of the selected type) to filter on | [optional] |
-| **channelExportStatusStatuses** | [**\ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus[]**](../Model/\ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus.md)|  | [optional] |
+| **channelExportStatusStatuses** | [**\ChannelEngine\Merchant\ApiClient\Model\ModuleChannelExportStatus[]**](../Model/\ChannelEngine\Merchant\ApiClient\Model\ModuleChannelExportStatus.md)|  | [optional] |
 | **channelExportStatusMaxNumberOfExportAttempts** | **int**|  | [optional] |
 | **reasons** | [**\ChannelEngine\Merchant\ApiClient\Model\ModuleReturnReason[]**](../Model/\ChannelEngine\Merchant\ApiClient\Model\ModuleReturnReason.md)|  | [optional] |
 | **createdDateRangeFromDate** | **\DateTime**|  | [optional] |
@@ -401,11 +400,10 @@ try {
 | **search** | **string**|  | [optional] |
 | **isAcknowledgedByMerchant** | **bool**|  | [optional] |
 | **isAcknowledgedByChannel** | **bool**|  | [optional] |
-| **fulfillmentType** | [**ModuleFulfillmentType**](../Model/.md)|  | [optional] |
-| **creatorType** | [**CreatorType**](../Model/.md)|  | [optional] |
+| **fulfillmentType** | [**\ChannelEngine\Merchant\ApiClient\Model\ModuleFulfillmentType**](../Model/.md)|  | [optional] |
+| **creatorType** | [**\ChannelEngine\Merchant\ApiClient\Model\CreatorType**](../Model/.md)|  | [optional] |
 | **externalBatchNos** | [**string[]**](../Model/string.md)|  | [optional] |
-| **pageIndex** | **int**|  | [optional] |
-| **pageSize** | **int**|  | [optional] |
+| **page** | **int**| Page number | [optional] |
 
 ### Return type
 
@@ -432,7 +430,7 @@ returnGetByMerchantOrderNo($merchantOrderNo): \ChannelEngine\Merchant\ApiClient\
 
 Gets a return
 
-Gets the returns based on the **Merchant order number** provided.<br /><br />**NB:** this endpoint is meant for merchants. Marketplaces should use the **GET /v2/returns/channel** call instead.
+Gets the returns based on the **Merchant order number** provided. <br /> <br />**NB:** this endpoint is meant for merchants. Marketplaces should use the **GET /v2/returns/channel** call instead.
 
 ### Example
 
@@ -494,7 +492,7 @@ returnGetDeclaredByChannel($channelIds, $merchantOrderNos, $channelOrderNos, $fu
 
 Gets marketplace returns
 
-Gets all returns created by the marketplace.<br /><br />**NB:** this endpoint is used for both marketplace and marketplace-fulfilled returns.
+Gets all returns created by the marketplace. <br /> <br />**NB:** this endpoint is used for both marketplace and marketplace-fulfilled returns.
 
 ### Example
 
@@ -518,11 +516,11 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\ReturnsApi(
 $channelIds = array(56); // int[] | Filter on Channel IDs
 $merchantOrderNos = array('merchantOrderNos_example'); // string[] | Filter on unique order reference used by the merchant.
 $channelOrderNos = array('channelOrderNos_example'); // string[] | Filter on unique order reference used by the channel.
-$fulfillmentType = new \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType(); // FulfillmentType | Filter on the fulfillment type of the order.
+$fulfillmentType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\FulfillmentType(); // \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType | Filter on the fulfillment type of the order.
 $statuses = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ReturnStatus()); // \ChannelEngine\Merchant\ApiClient\Model\ReturnStatus[] | Return status(es) to filter on.
 $reasons = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ReturnReason()); // \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] | Return reason(s) to filter on.
-$fromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the creation date, starting from this date. This date is inclusive.
-$toDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the creation date, until this date. This date is exclusive.
+$fromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the creation date, starting from this date. This date is inclusive.
+$toDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the creation date, until this date. This date is exclusive.
 $isAcknowledged = True; // bool | Filters based on acknowledgements
 $page = 56; // int | The page to filter on. Starts at 1.
 
@@ -541,7 +539,7 @@ try {
 | **channelIds** | [**int[]**](../Model/int.md)| Filter on Channel IDs | [optional] |
 | **merchantOrderNos** | [**string[]**](../Model/string.md)| Filter on unique order reference used by the merchant. | [optional] |
 | **channelOrderNos** | [**string[]**](../Model/string.md)| Filter on unique order reference used by the channel. | [optional] |
-| **fulfillmentType** | [**FulfillmentType**](../Model/.md)| Filter on the fulfillment type of the order. | [optional] |
+| **fulfillmentType** | [**\ChannelEngine\Merchant\ApiClient\Model\FulfillmentType**](../Model/.md)| Filter on the fulfillment type of the order. | [optional] |
 | **statuses** | [**\ChannelEngine\Merchant\ApiClient\Model\ReturnStatus[]**](../Model/\ChannelEngine\Merchant\ApiClient\Model\ReturnStatus.md)| Return status(es) to filter on. | [optional] |
 | **reasons** | [**\ChannelEngine\Merchant\ApiClient\Model\ReturnReason[]**](../Model/\ChannelEngine\Merchant\ApiClient\Model\ReturnReason.md)| Return reason(s) to filter on. | [optional] |
 | **fromDate** | **\DateTime**| Filter on the creation date, starting from this date. This date is inclusive. | [optional] |
@@ -574,7 +572,7 @@ returnGetReturns($creatorType, $channelIds, $merchantOrderNos, $channelOrderNos,
 
 Gets returns by filter
 
-Gets the returns based on the filter provided.<br /><br />**NB:** this endpoint is used to retrieve all types of returns: merchant, marketplace, mixed, and marketplace-fulfilled.
+Gets the returns based on the filter provided. <br /> <br />**NB:** this endpoint is used to retrieve all types of returns: merchant, marketplace, mixed, and marketplace-fulfilled.
 
 ### Example
 
@@ -595,15 +593,15 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\ReturnsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$creatorType = new \ChannelEngine\Merchant\ApiClient\Model\CreatorFilter(); // CreatorFilter | Filter on the return's creator. Default is MIXED.
+$creatorType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\CreatorFilter(); // \ChannelEngine\Merchant\ApiClient\Model\CreatorFilter | Filter on the return's creator. Default is MIXED.
 $channelIds = array(56); // int[] | Filter on Channel IDs
 $merchantOrderNos = array('merchantOrderNos_example'); // string[] | Filter on unique order reference used by the merchant.
 $channelOrderNos = array('channelOrderNos_example'); // string[] | Filter on unique order reference used by the channel.
-$fulfillmentType = new \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType(); // FulfillmentType | Filter on the fulfillment type of the order.
+$fulfillmentType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\FulfillmentType(); // \ChannelEngine\Merchant\ApiClient\Model\FulfillmentType | Filter on the fulfillment type of the order.
 $statuses = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ReturnStatus()); // \ChannelEngine\Merchant\ApiClient\Model\ReturnStatus[] | Return status(es) to filter on.
 $reasons = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ReturnReason()); // \ChannelEngine\Merchant\ApiClient\Model\ReturnReason[] | Return reason(s) to filter on.
-$fromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the creation date, starting from this date. This date is inclusive.
-$toDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the creation date, until this date. This date is exclusive.
+$fromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the creation date, starting from this date. This date is inclusive.
+$toDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the creation date, until this date. This date is exclusive.
 $isAcknowledged = True; // bool | Filters based on acknowledgements
 $page = 56; // int | The page to filter on. Starts at 1.
 
@@ -619,11 +617,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **creatorType** | [**CreatorFilter**](../Model/.md)| Filter on the return&#39;s creator. Default is MIXED. | [optional] |
+| **creatorType** | [**\ChannelEngine\Merchant\ApiClient\Model\CreatorFilter**](../Model/.md)| Filter on the return&#39;s creator. Default is MIXED. | [optional] |
 | **channelIds** | [**int[]**](../Model/int.md)| Filter on Channel IDs | [optional] |
 | **merchantOrderNos** | [**string[]**](../Model/string.md)| Filter on unique order reference used by the merchant. | [optional] |
 | **channelOrderNos** | [**string[]**](../Model/string.md)| Filter on unique order reference used by the channel. | [optional] |
-| **fulfillmentType** | [**FulfillmentType**](../Model/.md)| Filter on the fulfillment type of the order. | [optional] |
+| **fulfillmentType** | [**\ChannelEngine\Merchant\ApiClient\Model\FulfillmentType**](../Model/.md)| Filter on the fulfillment type of the order. | [optional] |
 | **statuses** | [**\ChannelEngine\Merchant\ApiClient\Model\ReturnStatus[]**](../Model/\ChannelEngine\Merchant\ApiClient\Model\ReturnStatus.md)| Return status(es) to filter on. | [optional] |
 | **reasons** | [**\ChannelEngine\Merchant\ApiClient\Model\ReturnReason[]**](../Model/\ChannelEngine\Merchant\ApiClient\Model\ReturnReason.md)| Return reason(s) to filter on. | [optional] |
 | **fromDate** | **\DateTime**| Filter on the creation date, starting from this date. This date is inclusive. | [optional] |
@@ -720,7 +718,7 @@ returnHandle($singleMerchantHandleReturnRequest): \ChannelEngine\Merchant\ApiCli
 
 [CLOSED BETA] Handle a return
 
-Handles a return<br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
+Handles a return <br /> <br />Beware, this endpoint is part of a closed beta and is only available for closed beta participants.
 
 ### Example
 
@@ -782,7 +780,7 @@ returnUpdateForMerchant($merchantReturnUpdateRequest): \ChannelEngine\Merchant\A
 
 Marks returns as received
 
-Marks a return as either fully or partially received.<br /> <br />**NB:** this endpoint is used for marketplace returns, and you can only accept or reject a return once.
+Marks a return as either fully or partially received. <br /> <br />**NB:** this endpoint is used for marketplace returns, and you can only accept or reject a return once.
 
 ### Example
 

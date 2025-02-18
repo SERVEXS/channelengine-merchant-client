@@ -41,14 +41,14 @@ $unExportedOnly = True; // bool | Filter on settlements that have not been expor
 $settlementIds = array(56); // int[] | Filter on settlement IDs.
 $channelSettlementNos = array('channelSettlementNos_example'); // string[] | Filter on channel settlement nos.
 $channelIds = array(56); // int[] | Filter on channel id list.
-$fromStartDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the start date of the settlement in ChannelEngine, until this date. This date is exclusive.
-$toStartDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the start date of the settlement in ChannelEngine, until this date. This date is exclusive.
-$fromEndDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the end date of the settlement in ChannelEngine, starting from this date. This date is inclusive.
-$toEndDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the end date of the settlement in ChannelEngine, until this date. This date is exclusive.
-$fromCreateDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the create date of the settlement in ChannelEngine, until this date. This date is exclusive.
-$toCreateDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the create date of the settlement in ChannelEngine, until this date. This date is exclusive.
-$fromUpdateDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the update date of the settlement in ChannelEngine, starting from this date. This date is inclusive.
-$toUpdateDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the update date of the settlement in ChannelEngine, until this date. This date is exclusive.
+$fromStartDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the start date of the settlement in ChannelEngine, until this date. This date is exclusive.
+$toStartDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the start date of the settlement in ChannelEngine, until this date. This date is exclusive.
+$fromEndDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the end date of the settlement in ChannelEngine, starting from this date. This date is inclusive.
+$toEndDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the end date of the settlement in ChannelEngine, until this date. This date is exclusive.
+$fromCreateDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the create date of the settlement in ChannelEngine, until this date. This date is exclusive.
+$toCreateDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the create date of the settlement in ChannelEngine, until this date. This date is exclusive.
+$fromUpdateDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the update date of the settlement in ChannelEngine, starting from this date. This date is inclusive.
+$toUpdateDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the update date of the settlement in ChannelEngine, until this date. This date is exclusive.
 $page = 56; // int | The page to filter on. Starts at 1.
 
 try {
@@ -123,7 +123,7 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\SettlementsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$settlement = "/path/to/file.txt"; // \SplFileObject | The settlement file must not exceed 1MB in size.  Use the file format originally provided by the marketplace (usually CSV).
+$settlement = '/path/to/file.txt'; // \SplFileObject | The settlement file must not exceed 1MB in size.  Use the file format originally provided by the marketplace (usually CSV).
 $channelId = 56; // int | The channel ID of the channel which the settlement is for.
 
 try {
