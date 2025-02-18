@@ -1,0 +1,11 @@
+{
+  "name": "channel-enigne-merchant-api-client",
+  "version": "2.19.0",
+  "license": "MIT",
+  "scripts": {
+    "generate": "openapi-generator-cli generate -i open-api-spec.json -g php -c config.json -o ./ --skip-validate-spec"
+  },
+  "dependencies": {
+    "@openapitools/openapi-generator-cli": "^2.16.3"
+  }
+}

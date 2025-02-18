@@ -1,0 +1,8 @@
+{
+  "packageName": "ChannelEngine\\Merchant\\ApiClient",
+  "invokerPackage": "ChannelEngine\\Merchant\\ApiClient",
+  "artifactVersion": "2.19.0",
+  "gitUserId": "servexs",
+  "gitRepoId": "channelengine-merchant-client",
+  "variableNamingConvention": "camelCase"
+}

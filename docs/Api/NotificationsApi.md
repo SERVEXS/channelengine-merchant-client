@@ -36,8 +36,8 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\NotificationsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$fromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the notification date, starting from this date. This date is inclusive.
-$toDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | Filter on the notification date, until this date. This date is exclusive.
+$fromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the notification date, starting from this date. This date is inclusive.
+$toDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Filter on the notification date, until this date. This date is exclusive.
 $types = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\NotificationType()); // \ChannelEngine\Merchant\ApiClient\Model\NotificationType[] | Notification type(s) to filter on.
 $merchantOrderNos = array('merchantOrderNos_example'); // string[] | Filter on unique order reference used by the merchant.
 $channelOrderNos = array('channelOrderNos_example'); // string[] | Filter on unique order reference used by the channel.

@@ -1,4 +1,4 @@
-# OpenAPIClient-php
+# ChannelEngine\Merchant\ApiClient
 
 ChannelEngine API for merchants
 
@@ -19,11 +19,11 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/channelengine/merchant-api-client-php.git"
+      "url": "https://github.com/servexs/channelengine-merchant-client.git"
     }
   ],
   "require": {
-    "channelengine/merchant-api-client-php": "*@dev"
+    "servexs/channelengine-merchant-client": "*@dev"
   }
 }
 ```
@@ -36,7 +36,7 @@ Download the files and include `autoload.php`:
 
 ```php
 <?php
-require_once('/path/to/OpenAPIClient-php/vendor/autoload.php');
+require_once('/path/to/ChannelEngine\Merchant\ApiClient/vendor/autoload.php');
 ```
 
 ## Getting Started
@@ -84,7 +84,7 @@ Class | Method | HTTP request | Description
 *CompetitionPricesApi* | [**competitionPricesGetBuyBoxPrices**](docs/Api/CompetitionPricesApi.md#competitionpricesgetbuyboxprices) | **GET** /v2/competitionprices/buyboxprices | Gets the price from the buy box winner
 *CustomFieldsApi* | [**customFieldsDeleteCustomFields**](docs/Api/CustomFieldsApi.md#customfieldsdeletecustomfields) | **DELETE** /v2/custom-fields | Delete custom fields by a given list of custom field ids (product extra data ids)
 *CustomFieldsApi* | [**customFieldsGetCustomFields**](docs/Api/CustomFieldsApi.md#customfieldsgetcustomfields) | **GET** /v2/custom-fields | Gets custom fields
-*FulfillmentStockApi* | [**fulfillmentStockGetFulfillementStockWithStockLocations**](docs/Api/FulfillmentStockApi.md#fulfillmentstockgetfulfillementstockwithstocklocations) | **GET** /v2/fulfillmentstock | Gets product stock across all warehouses with stock locations
+*FulfillmentStockApi* | [**fulfillmentStockGetFulfillmentStockWithStockLocations**](docs/Api/FulfillmentStockApi.md#fulfillmentstockgetfulfillmentstockwithstocklocations) | **GET** /v2/fulfillmentstock | Gets product stock across all warehouses with stock locations - Channel Fulfillment location
 *ListedProductsApi* | [**listedProductGetByFilter**](docs/Api/ListedProductsApi.md#listedproductgetbyfilter) | **GET** /v2/channels/{channelId}/products | Gets products listed by channel
 *NotificationsApi* | [**notificationIndex**](docs/Api/NotificationsApi.md#notificationindex) | **GET** /v2/notifications | Gets notifications
 *OffersApi* | [**offerGetStock**](docs/Api/OffersApi.md#offergetstock) | **GET** /v2/offer/stock | Gets product stock across all warehouses
@@ -97,6 +97,7 @@ Class | Method | HTTP request | Description
 *OrdersApi* | [**orderGetByFilter**](docs/Api/OrdersApi.md#ordergetbyfilter) | **GET** /v2/orders | Gets orders by filter
 *OrdersApi* | [**orderGetNew**](docs/Api/OrdersApi.md#ordergetnew) | **GET** /v2/orders/new | Gets new orders
 *OrdersApi* | [**orderInvoice**](docs/Api/OrdersApi.md#orderinvoice) | **GET** /v2/orders/{merchantOrderNo}/invoice | Generates an order invoice
+*OrdersApi* | [**orderMarkExportAsFailed**](docs/Api/OrdersApi.md#ordermarkexportasfailed) | **POST** /v2/orders/mark-export-as-failed | 
 *OrdersApi* | [**orderPackingSlip**](docs/Api/OrdersApi.md#orderpackingslip) | **GET** /v2/orders/{merchantOrderNo}/packingslip | Generates a packing slip
 *OrdersApi* | [**orderUpdate**](docs/Api/OrdersApi.md#orderupdate) | **PUT** /v2/orders/comment | Updates an order comment
 *OrdersApi* | [**orderUploadInvoice**](docs/Api/OrdersApi.md#orderuploadinvoice) | **POST** /v2/orders/{merchantOrderNo}/invoice | Uploads an order invoice
@@ -131,8 +132,8 @@ Class | Method | HTTP request | Description
 *RefundsApi* | [**refundGet**](docs/Api/RefundsApi.md#refundget) | **GET** /v2.1/refunds/merchant/{identifier} | [CLOSED BETA] Get refund by identifier
 *RefundsApi* | [**refundGetByFilter**](docs/Api/RefundsApi.md#refundgetbyfilter) | **GET** /v2.1/refunds/merchant | [CLOSED BETA] Get refunds by filter
 *ReportsApi* | [**reportCreateSettlementsReport**](docs/Api/ReportsApi.md#reportcreatesettlementsreport) | **POST** /v2/reports/settlements | Creates a settlement report
-*ReportsApi* | [**reportGetReport**](docs/Api/ReportsApi.md#reportgetreport) | **GET** /v2/reports/{reportId} | Gets a settlement report
-*ReportsApi* | [**reportGetStatus**](docs/Api/ReportsApi.md#reportgetstatus) | **GET** /v2/reports/{reportId}/status | Gets the status of a settlement report
+*ReportsApi* | [**reportGetReport**](docs/Api/ReportsApi.md#reportgetreport) | **GET** /v2/reports/{reportId} | Gets a report
+*ReportsApi* | [**reportGetStatus**](docs/Api/ReportsApi.md#reportgetstatus) | **GET** /v2/reports/{reportId}/status | Gets the status of a report
 *ReturnsApi* | [**returnAcknowledge**](docs/Api/ReturnsApi.md#returnacknowledge) | **POST** /v2.1/returns/merchant/acknowledge | [CLOSED BETA] Acknowledge a return
 *ReturnsApi* | [**returnAcknowledge_0**](docs/Api/ReturnsApi.md#returnacknowledge_0) | **POST** /v2/returns/merchant/acknowledge | Acknowledges a return
 *ReturnsApi* | [**returnCreate**](docs/Api/ReturnsApi.md#returncreate) | **POST** /v2.1/returns/merchant | [CLOSED BETA] Create a return
@@ -156,10 +157,12 @@ Class | Method | HTTP request | Description
 *ShipmentsApi* | [**shipmentUpdate**](docs/Api/ShipmentsApi.md#shipmentupdate) | **PUT** /v2/shipments/{merchantShipmentNo} | Updates a shipment
 *StockLocationsApi* | [**stockLocationCreate**](docs/Api/StockLocationsApi.md#stocklocationcreate) | **POST** /v2/stocklocations | Creates a stock location
 *StockLocationsApi* | [**stockLocationIndex**](docs/Api/StockLocationsApi.md#stocklocationindex) | **GET** /v2/stocklocations | Gets stock locations
+*SupportApi* | [**supportCreateTestOrders**](docs/Api/SupportApi.md#supportcreatetestorders) | **POST** /v2/supportorder | 
+*SupportApi* | [**supportCreateTestShippingLabels**](docs/Api/SupportApi.md#supportcreatetestshippinglabels) | **POST** /v2/testshippinglabel | 
 *TargetsApi* | [**targetsCreateTargets**](docs/Api/TargetsApi.md#targetscreatetargets) | **POST** /v2/targets | Creates multiple targets
 *TargetsApi* | [**targetsDeleteTargets**](docs/Api/TargetsApi.md#targetsdeletetargets) | **DELETE** /v2/targets | Deletes multiple targets
 *TargetsApi* | [**targetsEditTargets**](docs/Api/TargetsApi.md#targetsedittargets) | **PUT** /v2/targets | Edits multiple targets
-*WebhooksApi* | [**webhooksCreate**](docs/Api/WebhooksApi.md#webhookscreate) | **POST** /v2/webhooks | Creates a webhook
+*WebhooksApi* | [**webhooksCreate**](docs/Api/WebhooksApi.md#webhookscreate) | **POST** /v2/webhooks | Creates a webhook or update a deleted webhook and undelete it
 *WebhooksApi* | [**webhooksDelete**](docs/Api/WebhooksApi.md#webhooksdelete) | **DELETE** /v2/webhooks/{webhookName} | Deletes a webhook
 *WebhooksApi* | [**webhooksGetAll**](docs/Api/WebhooksApi.md#webhooksgetall) | **GET** /v2/webhooks | Gets webhooks
 *WebhooksApi* | [**webhooksUpdate**](docs/Api/WebhooksApi.md#webhooksupdate) | **PUT** /v2/webhooks | Updates a webhook
@@ -170,6 +173,7 @@ Class | Method | HTTP request | Description
 - [AdvanceSettingsResponse](docs/Model/AdvanceSettingsResponse.md)
 - [ApiResponse](docs/Model/ApiResponse.md)
 - [BulkMerchantCreatePurchaseOrderInvoicesRequest](docs/Model/BulkMerchantCreatePurchaseOrderInvoicesRequest.md)
+- [BulkMerchantMarkExportAsFailedForOrdersRequest](docs/Model/BulkMerchantMarkExportAsFailedForOrdersRequest.md)
 - [ChangePurchaseOrderShipmentLine](docs/Model/ChangePurchaseOrderShipmentLine.md)
 - [ChannelCarrierCollectionMethodApi](docs/Model/ChannelCarrierCollectionMethodApi.md)
 - [ChannelCarrierRecommendationApi](docs/Model/ChannelCarrierRecommendationApi.md)
@@ -204,6 +208,11 @@ Class | Method | HTTP request | Description
 - [CreateEditTargetRequest](docs/Model/CreateEditTargetRequest.md)
 - [CreateEditTargetView](docs/Model/CreateEditTargetView.md)
 - [CreatePurchaseOrderShipment](docs/Model/CreatePurchaseOrderShipment.md)
+- [CreateTestExtraDataLine](docs/Model/CreateTestExtraDataLine.md)
+- [CreateTestOrderLine](docs/Model/CreateTestOrderLine.md)
+- [CreateTestOrderRequest](docs/Model/CreateTestOrderRequest.md)
+- [CreateTestOrdersRequest](docs/Model/CreateTestOrdersRequest.md)
+- [CreateTestShippingLabelsRequest](docs/Model/CreateTestShippingLabelsRequest.md)
 - [CreatedByType](docs/Model/CreatedByType.md)
 - [CreatorFilter](docs/Model/CreatorFilter.md)
 - [CreatorType](docs/Model/CreatorType.md)
@@ -228,6 +237,7 @@ Class | Method | HTTP request | Description
 - [IRefundCurrency](docs/Model/IRefundCurrency.md)
 - [IRefundLine](docs/Model/IRefundLine.md)
 - [IReturn](docs/Model/IReturn.md)
+- [IReturnExtraData](docs/Model/IReturnExtraData.md)
 - [IReturnLine](docs/Model/IReturnLine.md)
 - [IReturnLineHandlingResult](docs/Model/IReturnLineHandlingResult.md)
 - [IVendorParty](docs/Model/IVendorParty.md)
@@ -257,6 +267,8 @@ Class | Method | HTTP request | Description
 - [MerchantGetReportStatusResponse](docs/Model/MerchantGetReportStatusResponse.md)
 - [MerchantHandleReturn](docs/Model/MerchantHandleReturn.md)
 - [MerchantInvoiceUploadRequest](docs/Model/MerchantInvoiceUploadRequest.md)
+- [MerchantMarkExportAsFailedForOrderIdentifier](docs/Model/MerchantMarkExportAsFailedForOrderIdentifier.md)
+- [MerchantMarkExportAsFailedForOrderIdentifierTypeValue](docs/Model/MerchantMarkExportAsFailedForOrderIdentifierTypeValue.md)
 - [MerchantNotificationResponse](docs/Model/MerchantNotificationResponse.md)
 - [MerchantOfferGetStockResponse](docs/Model/MerchantOfferGetStockResponse.md)
 - [MerchantOfferStockUpdateRequest](docs/Model/MerchantOfferStockUpdateRequest.md)
@@ -308,6 +320,7 @@ Class | Method | HTTP request | Description
 - [MerchantVendorParty](docs/Model/MerchantVendorParty.md)
 - [MerchantWebhookRequest](docs/Model/MerchantWebhookRequest.md)
 - [MerchantWebhookResponse](docs/Model/MerchantWebhookResponse.md)
+- [ModuleChannelExportStatus](docs/Model/ModuleChannelExportStatus.md)
 - [ModuleFulfillmentType](docs/Model/ModuleFulfillmentType.md)
 - [ModuleReturnReason](docs/Model/ModuleReturnReason.md)
 - [ModuleReturnStatus](docs/Model/ModuleReturnStatus.md)
@@ -321,6 +334,7 @@ Class | Method | HTTP request | Description
 - [ModulesTaxType](docs/Model/ModulesTaxType.md)
 - [NotificationType](docs/Model/NotificationType.md)
 - [Operation](docs/Model/Operation.md)
+- [OrderDocumentLinkedWith](docs/Model/OrderDocumentLinkedWith.md)
 - [OrderDocumentMediaType](docs/Model/OrderDocumentMediaType.md)
 - [OrderDocumentSource](docs/Model/OrderDocumentSource.md)
 - [OrderDocumentType](docs/Model/OrderDocumentType.md)
@@ -382,12 +396,14 @@ Class | Method | HTTP request | Description
 - [SingleOfMerchantProductResponse](docs/Model/SingleOfMerchantProductResponse.md)
 - [SingleOfMerchantSettingsResponse](docs/Model/SingleOfMerchantSettingsResponse.md)
 - [SingleOfProductCreationResult](docs/Model/SingleOfProductCreationResult.md)
+- [SupportOrderAddress](docs/Model/SupportOrderAddress.md)
 - [TargetResponseVm](docs/Model/TargetResponseVm.md)
 - [UpdatePurchaseOrderShipment](docs/Model/UpdatePurchaseOrderShipment.md)
 - [VatRateType](docs/Model/VatRateType.md)
 - [VatSettingsResponse](docs/Model/VatSettingsResponse.md)
 - [VolumeUnitOfMeasure](docs/Model/VolumeUnitOfMeasure.md)
 - [WebhookEventType](docs/Model/WebhookEventType.md)
+- [WebhookRequestType](docs/Model/WebhookRequestType.md)
 - [WeightUnitOfMeasure](docs/Model/WeightUnitOfMeasure.md)
 
 ## Authorization
@@ -417,7 +433,7 @@ vendor/bin/phpunit
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `2.18.0`
-    - Package version: `3.0.0`
-    - Generator version: `7.8.0`
+- API version: `2.19.0`
+    - Package version: `2.19.0`
+    - Generator version: `7.11.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

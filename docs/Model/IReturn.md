@@ -5,9 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **lines** | [**\ChannelEngine\Merchant\ApiClient\Model\IReturnLine[]**](IReturnLine.md) |  | [optional]
+**extraData** | [**\ChannelEngine\Merchant\ApiClient\Model\IReturnExtraData[]**](IReturnExtraData.md) |  | [optional]
 **id** | **int** |  | [optional]
 **status** | [**\ChannelEngine\Merchant\ApiClient\Model\ModuleReturnStatus**](ModuleReturnStatus.md) |  | [optional]
-**channelExportStatus** | [**\ChannelEngine\Merchant\ApiClient\Model\ChannelExportStatus**](ChannelExportStatus.md) |  | [optional]
+**channelExportStatus** | [**\ChannelEngine\Merchant\ApiClient\Model\ModuleChannelExportStatus**](ModuleChannelExportStatus.md) |  | [optional]
 **reason** | [**\ChannelEngine\Merchant\ApiClient\Model\ModuleReturnReason**](ModuleReturnReason.md) |  | [optional]
 **merchantComment** | **string** |  | [optional]
 **merchantReturnNo** | **string** |  | [optional]

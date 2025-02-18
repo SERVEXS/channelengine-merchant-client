@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **merchantRefundNo** | **string** |  | [optional]
 **reason** | [**\ChannelEngine\Merchant\ApiClient\Model\RefundReason**](RefundReason.md) |  | [optional]
 **merchantComment** | **string** |  | [optional]
-**additionalAmountInclTax** | **float** |  | [optional]
 **shippingAmountInclTax** | **float** |  | [optional]
 **refundDate** | **\DateTime** |  | [optional]
 **extraData** | **array<string,string>** |  | [optional]

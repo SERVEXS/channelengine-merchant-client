@@ -21,7 +21,7 @@ acknowledge($singleMerchantAcknowledgePurchaseOrderLinesRequest): \ChannelEngine
 
 Acknowledges lines of a purchase order
 
-Creates line acknowledgements (i.e., accepted, backordered, rejected) for a purchase order.<br />Request will be accepted and data persisted only if all validations passed.<br />Any validation messages and errors will be returned in a HTTP 4xx response.
+Creates line acknowledgements (i.e., accepted, backordered, rejected) for a purchase order. <br />Request will be accepted and data persisted only if all validations passed. <br />Any validation messages and errors will be returned in a HTTP 4xx response.
 
 ### Example
 
@@ -167,14 +167,14 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\PurchaseOrdersApi(
     $config
 );
 $channelId = 56; // int | The identifier of the channel
-$identifiersIdentifierType = new \ChannelEngine\Merchant\ApiClient\Model\PurchaseOrderShipmentIdentifierTypeValue(); // PurchaseOrderShipmentIdentifierTypeValue | The type of identifier: which identifier to filter on
+$identifiersIdentifierType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\PurchaseOrderShipmentIdentifierTypeValue(); // \ChannelEngine\Merchant\ApiClient\Model\PurchaseOrderShipmentIdentifierTypeValue | The type of identifier: which identifier to filter on
 $identifiersModels = array('identifiersModels_example'); // string[] | The value (of the selected type) to filter on
-$shippedDateRangeFromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$shippedDateRangeToDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$createDateRangeFromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$createDateRangeToDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$updateDateRangeFromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$updateDateRangeToDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$shippedDateRangeFromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$shippedDateRangeToDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$createDateRangeFromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$createDateRangeToDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$updateDateRangeFromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$updateDateRangeToDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
 $billOfLadingNumber = 'billOfLadingNumber_example'; // string | The Bill of Lading number. Multiple shipments can have the same Bill of Lading number
 $carrierName = 'carrierName_example'; // string | The name of the carrier
 $pageIndex = 56; // int
@@ -193,7 +193,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **channelId** | **int**| The identifier of the channel | [optional] |
-| **identifiersIdentifierType** | [**PurchaseOrderShipmentIdentifierTypeValue**](../Model/.md)| The type of identifier: which identifier to filter on | [optional] |
+| **identifiersIdentifierType** | [**\ChannelEngine\Merchant\ApiClient\Model\PurchaseOrderShipmentIdentifierTypeValue**](../Model/.md)| The type of identifier: which identifier to filter on | [optional] |
 | **identifiersModels** | [**string[]**](../Model/string.md)| The value (of the selected type) to filter on | [optional] |
 | **shippedDateRangeFromDate** | **\DateTime**|  | [optional] |
 | **shippedDateRangeToDate** | **\DateTime**|  | [optional] |
@@ -252,17 +252,17 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\PurchaseOrdersApi(
     new GuzzleHttp\Client(),
     $config
 );
-$identifiersIdentifierType = new \ChannelEngine\Merchant\ApiClient\Model\PurchaseOrderIdentifierType(); // PurchaseOrderIdentifierType | The type of identifier: which identifier to filter on
+$identifiersIdentifierType = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\PurchaseOrderIdentifierType(); // \ChannelEngine\Merchant\ApiClient\Model\PurchaseOrderIdentifierType | The type of identifier: which identifier to filter on
 $identifiersModels = array('identifiersModels_example'); // string[] | The value (of the selected type) to filter on
 $statuses = array(new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ModulesPurchaseOrderStatus()); // \ChannelEngine\Merchant\ApiClient\Model\ModulesPurchaseOrderStatus[]
-$orderDateRangeFromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$orderDateRangeToDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$createDateRangeFromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$createDateRangeToDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$updateDateRangeFromDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
-$updateDateRangeToDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime
+$orderDateRangeFromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$orderDateRangeToDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$createDateRangeFromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$createDateRangeToDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$updateDateRangeFromDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
+$updateDateRangeToDate = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime
 $channelIds = array(56); // int[]
-$type = new \ChannelEngine\Merchant\ApiClient\Model\ModulesPurchaseOrderType(); // ModulesPurchaseOrderType
+$type = new \ChannelEngine\Merchant\ApiClient\Model\\ChannelEngine\Merchant\ApiClient\Model\ModulesPurchaseOrderType(); // \ChannelEngine\Merchant\ApiClient\Model\ModulesPurchaseOrderType
 $pageIndex = 56; // int
 $pageSize = 56; // int
 
@@ -278,7 +278,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **identifiersIdentifierType** | [**PurchaseOrderIdentifierType**](../Model/.md)| The type of identifier: which identifier to filter on | [optional] |
+| **identifiersIdentifierType** | [**\ChannelEngine\Merchant\ApiClient\Model\PurchaseOrderIdentifierType**](../Model/.md)| The type of identifier: which identifier to filter on | [optional] |
 | **identifiersModels** | [**string[]**](../Model/string.md)| The value (of the selected type) to filter on | [optional] |
 | **statuses** | [**\ChannelEngine\Merchant\ApiClient\Model\ModulesPurchaseOrderStatus[]**](../Model/\ChannelEngine\Merchant\ApiClient\Model\ModulesPurchaseOrderStatus.md)|  | [optional] |
 | **orderDateRangeFromDate** | **\DateTime**|  | [optional] |
@@ -288,7 +288,7 @@ try {
 | **updateDateRangeFromDate** | **\DateTime**|  | [optional] |
 | **updateDateRangeToDate** | **\DateTime**|  | [optional] |
 | **channelIds** | [**int[]**](../Model/int.md)|  | [optional] |
-| **type** | [**ModulesPurchaseOrderType**](../Model/.md)|  | [optional] |
+| **type** | [**\ChannelEngine\Merchant\ApiClient\Model\ModulesPurchaseOrderType**](../Model/.md)|  | [optional] |
 | **pageIndex** | **int**|  | [optional] |
 | **pageSize** | **int**|  | [optional] |
 
@@ -317,7 +317,7 @@ purchaseOrdersCreateInvoice($singleMerchantCreatePurchaseOrderInvoiceRequest): \
 
 Creates a purchase order invoice
 
-Creates invoice for a purchase order.<br />Request will be accepted and data persisted only if all validations passed.<br />Any validation messages and errors will be returned in a HTTP 4xx response.
+Creates invoice for a purchase order. <br />Request will be accepted and data persisted only if all validations passed. <br />Any validation messages and errors will be returned in a HTTP 4xx response.
 
 ### Example
 
@@ -379,7 +379,7 @@ purchaseOrdersCreateInvoices($bulkMerchantCreatePurchaseOrderInvoicesRequest): \
 
 Creates a purchase order invoices in a bulk
 
-Creates invoices for a purchase orders in a bulk.<br />Request will be accepted and data persisted only if all validations passed.<br />Any validation messages and errors will be returned in a HTTP 4xx response.
+Creates invoices for a purchase orders in a bulk. <br />Request will be accepted and data persisted only if all validations passed. <br />Any validation messages and errors will be returned in a HTTP 4xx response.
 
 ### Example
 

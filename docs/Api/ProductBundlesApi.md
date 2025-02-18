@@ -36,7 +36,7 @@ $apiInstance = new ChannelEngine\Merchant\ApiClient\Api\ProductBundlesApi(
     new GuzzleHttp\Client(),
     $config
 );
-$search = 'search_example'; // string | Search product(s) by Name, MerchantProductNo, Ean or Brand<br />This search is applied to the result after applying the other filters.
+$search = 'search_example'; // string | Search product(s) by Name, MerchantProductNo, Ean or Brand <br />This search is applied to the result after applying the other filters.
 $eanList = array('eanList_example'); // string[] | Search products by submitting a list of EAN's.
 $merchantProductNoList = array('merchantProductNoList_example'); // string[] | Search products by submitting a list of MerchantProductNo's.
 $page = 56; // int | The page to filter on. Starts at 1.
@@ -53,7 +53,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **search** | **string**| Search product(s) by Name, MerchantProductNo, Ean or Brand&lt;br /&gt;This search is applied to the result after applying the other filters. | [optional] |
+| **search** | **string**| Search product(s) by Name, MerchantProductNo, Ean or Brand &lt;br /&gt;This search is applied to the result after applying the other filters. | [optional] |
 | **eanList** | [**string[]**](../Model/string.md)| Search products by submitting a list of EAN&#39;s. | [optional] |
 | **merchantProductNoList** | [**string[]**](../Model/string.md)| Search products by submitting a list of MerchantProductNo&#39;s. | [optional] |
 | **page** | **int**| The page to filter on. Starts at 1. | [optional] |
